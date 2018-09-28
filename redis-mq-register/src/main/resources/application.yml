@@ -1,0 +1,45 @@
+spring:
+  profiles:
+    #设置配置文件
+    active: @profileActive@
+  application:
+    name: redis-mq-register
+  #设置jackson格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  #设置数据库连接池
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+  #设置redis
+  redis:
+    jedis:
+      pool:
+        max-active: -1
+        min-idle: 0
+        max-idle: 100
+        max-wait: 6ms
+
+
+environment: @profileActive@
+
+mybatis:
+  type-aliases-package: org.huangding.redismqregister.model
+  #使用xml添加以下配置
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
