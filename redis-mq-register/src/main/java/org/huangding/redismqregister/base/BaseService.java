@@ -1,5 +1,7 @@
 package org.huangding.redismqregister.base;
 
+import java.util.List;
+
 /**
  * @author huangding
  * @description
@@ -8,4 +10,6 @@ package org.huangding.redismqregister.base;
 public interface BaseService<T> {
 
     Integer save(T t);
+
+    List<T> all();
 }

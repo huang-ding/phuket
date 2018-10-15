@@ -19,15 +19,15 @@ public class SenderTest {
     @Autowired
     private Sender sender;
 
-    @Test
-    public void hello() throws Exception{
-        for(int i=0;i<100;i++){
-            sender.send(i);
-        }
-
-        for (int i =0;i<100;i++){
-            sender.send("i"+i);
-        }
-    }
+//    @Test
+//    public void hello() throws Exception{
+//        for(int i=0;i<100;i++){
+//            sender.send(i);
+//        }
+//
+//        for (int i =0;i<100;i++){
+//            sender.send("i"+i);
+//        }
+//    }
 
 }

@@ -30,7 +30,6 @@ public class UserDaoTest {
 
     @Test
     public void saveTest(){
-        throw new DuplicateKeyException("asdad");
 //        User user = new User();
 
 //        user.setNameTest("huangding");
